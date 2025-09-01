@@ -1,0 +1,21 @@
+options:
+  createIntermediateGroups: true
+  indentWidth: 4
+  tabWidth: 4
+  bundleIdPrefix: ${BUNDLE_ID}
+configs:
+  Debug: debug
+  Release: release
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: 16
+    TARGETED_DEVICE_FAMILY: 1
+    PROJECT_NAME: ${PROJECT_NAME}
+  configs:
+    Debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+    Release:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: RELEASE
+packages:
+  WeatherPlaypen:
+    path: ../

@@ -1,0 +1,44 @@
+name: App
+include:
+  - path: ../config.yml
+fileGroups:
+  - project.yml
+  - ../Gemfile
+  - ../Brewfile
+  - ../config.yml
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: ${BUNDLE_ID}
+targets:
+  App:
+    type: application
+    platform: iOS
+    sources: [App, Resources]
+    info:
+      path: Resources/Info.plist
+      properties:
+        CFBundleShortVersionString: 0.0.1
+        CFBundleVersion: '1'
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UILaunchStoryboardName: LaunchScreen.storyboard
+        CFBundleDisplayName: App
+        UIUserInterfaceStyle: Light
+        UIStatusBarStyle: UIStatusBarStyleDarkContent
+        UIApplicationSceneManifest: {
+            UIApplicationSupportsMultipleScenes: false,
+            UISceneConfigurations: {}
+        }
+    preBuildScripts:
+      - path: ../Scripts/swiftlint.sh
+        name: Swiftlint
+        basedOnDependencyAnalysis: false
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: 1
+      configs:
+        Debug:
+          CODE_SIGN_IDENTITY: "iPhone Developer"
+        Release:
+          CODE_SIGN_IDENTITY: "iPhone Distribution"
+    dependencies:
+      - package: WeatherPlaypen

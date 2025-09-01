@@ -1,0 +1,7 @@
+excluded:
+  - Common/Common/Resources/Strings.swift
+  - Common/Common/Resources/Assets.swift
+  - Common/Common/Resources/Fonts.swift
+
+redundant_optional_initialization:
+  severity: error

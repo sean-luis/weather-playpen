@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "description": "A convenient library for weather reporting",
+  "homepage": "https://github.com/sean-luis/mqtt-playpen",
+  "license": {
+    "type": "MIT"
+  },
+  "author": {
+    "name": "Sean Luis",
+    "email": "gomesluisseanwork@gmail.com"
+  }
+}
