@@ -1,7 +1,6 @@
 .DS_Store
 *.xcodeproj
-xcuserdata/
-ExampleApp/xcuserdata/
+xcuserdata
 
 fastlane/report.xml
 fastlane/README.md
