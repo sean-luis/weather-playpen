@@ -13,7 +13,7 @@ end
 
 lane :generate_assets do 
   Dir.chdir("..") do
-    #sh 'cd Common; swiftgen' 
+    sh 'swiftgen' 
   end
 end
 

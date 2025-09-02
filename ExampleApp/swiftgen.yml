@@ -1,29 +1,22 @@
 strings:
-  inputs: ./Common/Resources/en.lproj/Localizable.strings
+  inputs: ./App/Resources/Localizable.strings
   options:
     separator: "_"
   outputs:
   - templateName: structured-swift5
-    output: Common/Resources/Strings.swift
+    output: App/Resources/Generated/Strings.swift
     params:
+      enumName: Strings
       forceProvidesNamespaces: true
       publicAccess: true
 xcassets:
   inputs:
-    - ./Common/Resources/Assets.xcassets
+    - ./App/Resources/Assets.xcassets
   outputs:
     - templateName: swift5
-      output: Common/Resources/Assets.swift
+      output: App/Resources/Generated/Assets.swift
       params:
         enumName: Assets
         forceProvidesNamespaces: true
         publicAccess: true
         allValues: true
-fonts:
-  inputs: ./Common/Resources/Fonts
-  outputs:
-    templateName: swift5
-    output: Common/Resources/Fonts.swift
-    params:
-      forceProvidesNamespaces: true
-      publicAccess: true

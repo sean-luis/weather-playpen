@@ -1,8 +1,12 @@
 .DS_Store
 *.xcodeproj
 xcuserdata/
+ExampleApp/xcuserdata/
 
 fastlane/report.xml
 fastlane/README.md
 
 output/
+
+App/Resources/Generated/Assets.swift
+App/Resources/Generated/Strings.swift

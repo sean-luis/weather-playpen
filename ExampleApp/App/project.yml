@@ -32,6 +32,12 @@ targets:
       - path: ../Scripts/swiftlint.sh
         name: Swiftlint
         basedOnDependencyAnalysis: false
+      - path: ../Scripts/swiftgen.sh
+        name: Swiftgen
+        basedOnDependencyAnalysis: false
+        outputFiles:
+          - $(DERIVED_FILE_DIR)/App/Resources/Strings.swift
+          - $(DERIVED_FILE_DIR)/App/Resources/Assets.swift
     settings:
       base:
         TARGETED_DEVICE_FAMILY: 1
