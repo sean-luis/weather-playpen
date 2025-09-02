@@ -13,7 +13,7 @@ workflows:
           - content: |-
               #!/usr/bin/env bash set -ex
 
-              rbenv local 3.2.4
+              rbenv local 3.3.5
     - brew-install@0:
         inputs:
           - brewfile_path: $BITRISE_SOURCE_DIR/ExampleApp/Brewfile

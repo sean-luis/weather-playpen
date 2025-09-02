@@ -5,6 +5,7 @@ GEM
       base64
       nkf
       rexml
+    abbrev (0.1.2)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     artifactory (3.0.17)
@@ -27,6 +28,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     babosa (1.0.4)
     base64 (0.2.0)
+    bigdecimal (3.2.3)
     claide (1.1.0)
     colored (1.2)
     colored2 (3.1.2)
@@ -154,15 +156,18 @@ GEM
     json (2.7.2)
     jwt (2.8.2)
       base64
+    logger (1.7.0)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     multi_json (1.15.0)
     multipart-post (2.4.1)
+    mutex_m (0.3.0)
     nanaimo (0.3.0)
     naturally (2.2.1)
     nkf (0.2.0)
     optparse (0.5.0)
     os (1.1.4)
+    ostruct (0.6.3)
     plist (3.7.1)
     public_suffix (5.0.3)
     rake (13.2.1)
@@ -212,7 +217,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  abbrev
+  bigdecimal
   fastlane
+  logger
+  mutex_m
+  ostruct
 
 BUNDLED WITH
    2.5.18

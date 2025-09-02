@@ -1,8 +1,8 @@
 default_platform :ios
 
 lane :gen do
-  generate_assets
   generate_project
+  generate_assets
   skip_docs
   open_project
 end
@@ -13,7 +13,7 @@ end
 
 lane :generate_assets do 
   Dir.chdir("..") do
-    sh 'swiftgen' 
+    sh "cd App; swiftgen"
   end
 end
 
@@ -32,8 +32,10 @@ end
 
 lane :build_project do
   build_ios_app(
-    buildlog_path: "./output",
-    build_path: "./output",
+    project: "./App/App.xcodeproj",
+    scheme: "App",
+    buildlog_path: "./App/output",
+    build_path: "./App/output",
     skip_archive: true,
     skip_codesigning: true
   )

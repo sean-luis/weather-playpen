@@ -35,9 +35,12 @@ targets:
       - path: ../Scripts/swiftgen.sh
         name: Swiftgen
         basedOnDependencyAnalysis: false
+        inputFiles:
+        - $(DERIVED_FILE_DIR)/Resources/Localizable.strings
+        - $(DERIVED_FILE_DIR)/Resources/Assets.xcassets
         outputFiles:
-          - $(DERIVED_FILE_DIR)/App/Resources/Strings.swift
-          - $(DERIVED_FILE_DIR)/App/Resources/Assets.swift
+          - $(DERIVED_FILE_DIR)/Resources/Generated/Strings.swift
+          - $(DERIVED_FILE_DIR)/Resources/Generated/Assets.swift
     settings:
       base:
         TARGETED_DEVICE_FAMILY: 1
