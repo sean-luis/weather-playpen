@@ -1,1 +1,1 @@
-final private class WPPModuleImpl: WPPModule {}
+final class WPPModuleImpl: WPPModule {}

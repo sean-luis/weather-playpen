@@ -1,0 +1,11 @@
+.DS_Store
+*.xcodeproj
+xcuserdata
+
+ExampleApp/fastlane/report.xml
+ExampleApp/fastlane/README.md
+
+output/
+
+ExampleApp/App/Resources/Assets.swift
+ExampleApp/App/Resources/Strings.swift
