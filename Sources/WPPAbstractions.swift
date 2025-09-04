@@ -1,1 +1,3 @@
-protocol WPPModule {}
+protocol WPPModule {
+    func initialise()
+}

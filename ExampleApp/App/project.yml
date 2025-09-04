@@ -51,3 +51,6 @@ targets:
           CODE_SIGN_IDENTITY: "iPhone Distribution"
     dependencies:
       - package: WeatherPlaypen
+        product: WeatherPlaypen
+      - package: Factory
+        product: FactoryKit
