@@ -40,3 +40,18 @@ lane :build_project do
     skip_codesigning: true
   )
 end
+
+lane :run_xcov do
+  clear_xcov_output
+  xcov(
+    project: "./App/App.xcodeproj",
+    scheme: "AppTests",
+    output_directory: "./App/xcov_output",
+    include_targets: "WeatherPlaypen.package",
+    skip_slack: true,
+  )
+end
+
+lane :clear_xcov_output do
+   sh "cd .. && if [ -d 'xcov_output' ]; then rm -Rf xcov_output; fi"
+end

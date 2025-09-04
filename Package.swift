@@ -26,12 +26,6 @@ let package = Package(
                 .product(name: "FactoryKit", package: "Factory")
             ],
             path: "Sources"
-        ),
-        .testTarget(
-            name: "WeatherPlaypenTests",
-            dependencies: [
-                "WeatherPlaypen",
-                .product(name: "FactoryTesting", package: "Factory")
-            ]),
+        )
     ]
 )

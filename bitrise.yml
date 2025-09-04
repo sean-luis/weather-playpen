@@ -7,7 +7,7 @@ workflows:
     description: ''
     steps:
     - git-clone@8: {}
-    - cache-pull@2: {}
+    - restore-spm-cache@1: {}
     - script@1:
         inputs:
           - content: |-
@@ -41,7 +41,13 @@ workflows:
           - update_fastlane: "false"
           - lane: build_project
         title: Build project
-    - cache-push@2: {}
+    - xcode-test@4.0:
+        inputs:
+          - project_path: $BITRISE_SOURCE_DIR/ExampleApp/App/App.xcodeproj
+          - scheme: AppTests
+          - destination: platform=iOS,name=iPhone 14 Plus,OS=latest
+          - generate_code_coverage_files: "yes"
+    - save-spm-cache@1: {}
   release:
     description: ''
     steps:
