@@ -1,1 +1,3 @@
-final class WPPModuleImpl: WPPModule {}
+final class WPPModuleImpl: WPPModule {
+    public func initialise() {}
+}

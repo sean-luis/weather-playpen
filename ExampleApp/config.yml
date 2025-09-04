@@ -19,3 +19,6 @@ settings:
 packages:
   WeatherPlaypen:
     path: ../
+  Factory:
+    url: "https://github.com/hmlongco/Factory"
+    version: 2.5.3
