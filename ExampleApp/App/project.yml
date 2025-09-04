@@ -54,3 +54,33 @@ targets:
         product: WeatherPlaypen
       - package: Factory
         product: FactoryKit
+  AppTests:
+    templateAttribute:
+      frameworkName: App
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: AppTests
+    info:
+      path: AppTests/Info.plist
+    dependencies:
+      - target: App
+schemes:
+  App:
+    build:
+      targets:
+        App: all_targets
+    run:
+      config: Debug
+    test:
+      gatherCoverageData: true
+      targets:
+        - AppTests       
+  AppTests:
+    build:
+      targets:
+        AppTests: [test, run]
+    test:
+      gatherCoverageData: true
+      targets:
+        - AppTests
