@@ -10,3 +10,4 @@ xcov_output/
 
 ExampleApp/App/Resources/Assets.swift
 ExampleApp/App/Resources/Strings.swift
+ExampleApp/App/AppTests/GeneratedMocks.swift

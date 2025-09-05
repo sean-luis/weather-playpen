@@ -65,6 +65,10 @@ targets:
       path: AppTests/Info.plist
     dependencies:
       - target: App
+      - package: Cuckoo
+    buildToolPlugins:
+      - plugin: CuckooPluginSingleFile
+        package: Cuckoo
 schemes:
   App:
     build:
