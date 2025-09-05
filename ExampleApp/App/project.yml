@@ -80,3 +80,7 @@ schemes:
     build:
       targets:
         AppTests: [test, run]
+    test:
+      gatherCoverageData: true
+      targets:
+        - AppTests
