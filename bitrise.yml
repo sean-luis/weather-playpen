@@ -47,7 +47,10 @@ workflows:
           - scheme: AppTests
           - destination: platform=iOS,name=iPhone 14 Plus,OS=latest
           - generate_code_coverage_files: "yes"
+          - xcodebuild_options: "-skipPackagePluginValidation"
     - save-spm-cache@1: {}
+    - generate-xcode-html-report: {}
+    - deploy-to-bitrise-io:
   release:
     description: ''
     steps:

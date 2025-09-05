@@ -1,0 +1,13 @@
+# You can define a fallback output for all modules that don't define their own.
+# output = "ExampleApp/AppTests/Mocks/GeneratedMocks.swift"
+
+[modules.App]
+imports = ["Foundation"]
+testableImports = ["WeatherPlaypen"]
+sources = [
+    "../../Sources/Abstractions/*.swift",
+]
+
+[modules.App.options]
+glob = true
+keepDocumentation = false

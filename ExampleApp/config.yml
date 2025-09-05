@@ -22,3 +22,6 @@ packages:
   Factory:
     url: "https://github.com/hmlongco/Factory"
     version: 2.5.3
+  Cuckoo:
+    url: "https://github.com/Brightify/Cuckoo.git"
+    version: 2.1.1

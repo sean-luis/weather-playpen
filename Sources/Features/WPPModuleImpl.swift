@@ -1,5 +1,3 @@
 final class WPPModuleImpl: WPPModule {
-    init() {
-        
-    }
+    func setup() {}
 }
