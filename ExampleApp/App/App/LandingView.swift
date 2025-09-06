@@ -14,10 +14,6 @@ struct LandingView: View {
             Text("Your current location is: \(String(describing: viewModel.$userLocation))")
         }
         .padding()
-        .onAppear {
-            viewModel.retrieveInitialLocationIfPossible()
-            viewModel.setupLocationResponding()
-        }
     }
 }
 

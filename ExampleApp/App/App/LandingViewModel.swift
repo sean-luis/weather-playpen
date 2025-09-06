@@ -13,7 +13,7 @@ final class LandingViewModel: NSObject, ObservableObject {
     }
 
     func setupLocationResponding() {
-        locationInteractor.add(locationDelegate: self)
+        locationInteractor.set(locationDelegate: self)
         locationInteractor.requestWhenInUseAuthorization()
     }
 }

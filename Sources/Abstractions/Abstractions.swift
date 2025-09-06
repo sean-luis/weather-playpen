@@ -1,5 +1,18 @@
 import CoreLocation
 
+// MARK: Data
+
+public protocol Repository: Sendable {
+    func fetchWeatherCurrent(latitude: String, longitude: String) async throws -> WPPCurrentDTO
+    func fetchWeatherForecast(latitude: String, longitude: String) async throws -> WPPForecastDTO
+}
+
+public protocol NetworkingProvider: Sendable {
+    func fetchJSONModel<Model: Codable & Sendable>(path: String, parameters: [String: String]) async throws -> Result<Model, Error>
+}
+
+// MARK: Utilities
+
 public protocol LocationManagerDelegate: NSObjectProtocol, CLLocationManagerDelegate {
     func didReceiveLocationUpdate(_ manager: CLLocationManager, currentLocation: CLLocation?)
     func authorizationStatusDidChange(_ manager: CLLocationManager, status: CLAuthorizationStatus)

@@ -12,9 +12,14 @@ public struct LandingView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-            Text("Your current location is: \(String(describing: viewModel.$userLocation))")
         }
         .padding()
+        .onAppear {
+            Task {
+                await viewModel.fetchWeatherToday()
+                await viewModel.fetchWeatherForecast()
+            }
+        }
     }
 }
 
