@@ -5,8 +5,8 @@ import Cuckoo
 import CoreLocation
 
 @MainActor
-final class LandingViewModelTests: XCTestCase {
-    var implementationUnderTest: LandingViewModel!
+final class MainViewModelTests: XCTestCase {
+    var implementationUnderTest: MainViewModel!
     var mockLocationInteractor: MockLocationInteractor!
     let mockedLocation = CLLocation(latitude: -34.397329, longitude: 20.823780)
 
@@ -21,7 +21,7 @@ final class LandingViewModelTests: XCTestCase {
             when(mock.currentLocation.get).thenReturn(mockedLocation)
         }
 
-        implementationUnderTest = LandingViewModel()
+        implementationUnderTest = MainViewModel()
     }
 
     override func tearDown() {

@@ -1,20 +1,20 @@
 strings:
-  inputs: ./Resources/Localizable.strings
+  inputs: ../../Sources/Resources/Localizable.strings
   options:
     separator: "_"
   outputs:
   - templateName: structured-swift5
-    output: Resources/Strings.swift
+    output: ../../Sources/Resources/Strings.swift
     params:
       enumName: Strings
       forceProvidesNamespaces: true
       publicAccess: true
 xcassets:
   inputs:
-    - ./Resources/Assets.xcassets
+    - ../../Sources/Resources/Assets.xcassets
   outputs:
-    - templateName: swift5
-      output: Resources/Assets.swift
+    - templatePath: ./structured-swift6-custom.stencil
+      output: ../../Sources/Resources/Assets.swift
       params:
         enumName: Assets
         forceProvidesNamespaces: true
