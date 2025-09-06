@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 28.1726,
+        "lat": -26.1276
+    },
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 24.36,
+        "feels_like": 23.4,
+        "temp_min": 24.36,
+        "temp_max": 24.36,
+        "pressure": 1012,
+        "humidity": 21,
+        "sea_level": 1012,
+        "grnd_level": 842
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 8.36,
+        "deg": 27,
+        "gust": 14
+    },
+    "clouds": {
+        "all": 85
+    },
+    "dt": 1757158079,
+    "sys": {
+        "country": "ZA",
+        "sunrise": 1757132087,
+        "sunset": 1757174219
+    },
+    "timezone": 7200,
+    "id": 7302797,
+    "name": "Eden Glen",
+    "cod": 200
+}

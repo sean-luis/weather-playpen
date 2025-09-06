@@ -72,7 +72,7 @@ final class RepositoryTests: XCTestCase {
         let latitude = mockLocation.coordinate.latitude.description
         let longitude = mockLocation.coordinate.longitude.description
         let returnType = Result<WPPForecastDTO, Error>.self
-        let mockedResult: Result<WPPForecastDTO, Error> = .success(TestDataGenerator.mockedForecastWeatherDTO)
+        let mockedResult: Result<WPPForecastDTO, Error> = .success(TestDataGenerator.mockedPostMiddayForecastWeatherDTO)
 
         stub(mockNetworkingProvider) { mock in
             when(mock.fetchJSONModel(path: any(), parameters: any())).thenReturn(mockedResult)
