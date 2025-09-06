@@ -4,6 +4,7 @@ import FactoryKit
 import Cuckoo
 import CoreLocation
 
+@MainActor
 final class LandingViewModelTests: XCTestCase {
     var implementationUnderTest: LandingViewModel!
     var mockLocationInteractor: MockLocationInteractor!
@@ -12,7 +13,7 @@ final class LandingViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockLocationInteractor = MockLocationInteractor()
-        Container.shared.locationInteractor.register { self.mockLocationInteractor as LocationInteractor }
+        Container.shared.locationInteractor.register { @MainActor in self.mockLocationInteractor as LocationInteractor }
 
         stub(mockLocationInteractor) { mock in
             when(mock.requestWhenInUseAuthorization()).thenDoNothing()
