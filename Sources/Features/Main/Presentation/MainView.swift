@@ -1,8 +1,8 @@
 import SwiftUI
 import FactoryKit
 
-public struct LandingView: View {
-    @StateObject var viewModel = LandingViewModel()
+public struct MainView: View {
+    @StateObject var viewModel = MainViewModel()
 
     public init() {}
     
@@ -25,5 +25,5 @@ public struct LandingView: View {
 
 #Preview {
     let _ = Container.shared.locationInteractor.register { PreviewLocationInteractor() }
-    LandingView()
+    MainView()
 }

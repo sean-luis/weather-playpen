@@ -9,7 +9,7 @@ struct ExampleApp {
 extension ExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            LandingView()
+            MainView()
         }
     }
 }

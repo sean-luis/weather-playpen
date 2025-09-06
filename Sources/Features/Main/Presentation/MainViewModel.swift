@@ -5,7 +5,7 @@ import CoreLocation
 import OSLog
 
 @MainActor
-public final class LandingViewModel: NSObject, ObservableObject {
+public final class MainViewModel: NSObject, ObservableObject {
     @Injected(\.locationInteractor) private var locationInteractor
     @Injected(\.repository) private var repository
     @Published var userLocation: CLLocation?
@@ -48,7 +48,7 @@ public final class LandingViewModel: NSObject, ObservableObject {
     }
 }
 
-extension LandingViewModel: @preconcurrency LocationManagerDelegate {
+extension MainViewModel: @preconcurrency LocationManagerDelegate {
     public func didReceiveLocationUpdate(_ manager: CLLocationManager, currentLocation: CLLocation?) {
         userLocation = currentLocation
     }
