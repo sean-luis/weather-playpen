@@ -25,7 +25,6 @@ public final class RepositoryImpl: Sendable, Repository {
         }
     }
     
-    @MainActor
     public func fetchWeatherForecast(latitude: String, longitude: String) async throws -> WPPForecastDTO {
         let parameters = [
             HTTPConstant.QueryParameter.latitude.rawValue: latitude,
