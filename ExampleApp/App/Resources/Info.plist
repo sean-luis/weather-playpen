@@ -20,6 +20,8 @@
 	<string>0.0.1</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>$(CFBundleDisplayName) needs access to your location when in use to provide weather reports</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

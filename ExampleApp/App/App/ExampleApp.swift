@@ -1,17 +1,15 @@
-//
-//  ExampleApp.swift
-//  App
-//
-//  Created by Sean Gomes-Luis on 2025/08/21.
-//
-
 import SwiftUI
+import WeatherPlaypen
 
 @main
-struct ExampleApp: App {
+struct ExampleApp {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+}
+
+extension ExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            RootContentView()
+            LandingView()
         }
     }
 }
