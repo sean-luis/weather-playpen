@@ -6,6 +6,11 @@ final public class LocationInteractorImpl: NSObject, LocationInteractor {
     private var currentStatus: CLAuthorizationStatus = .notDetermined
     public var currentLocation: CLLocation? { manager.location }
     
+    override init() {
+        super.init()
+        manager.delegate = self
+    }
+    
     public func requestWhenInUseAuthorization() {
         manager.requestWhenInUseAuthorization()
     }
@@ -31,13 +36,8 @@ extension LocationInteractorImpl: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         delegate?.didReceiveLocationUpdate(manager, currentLocation: locations.last)
     }
+    
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        
+    }
 }
-
-#if DEBUG
-public final class PreviewLocationInteractor: LocationInteractor {
-    public init() {}
-    public var currentLocation: CLLocation? = CLLocation(latitude: -34.397329, longitude: 20.823780)
-    public func requestWhenInUseAuthorization() {}
-    public func set(locationDelegate: LocationManagerDelegate) {}
-}
-#endif

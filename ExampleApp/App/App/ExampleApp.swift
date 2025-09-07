@@ -1,4 +1,5 @@
 import SwiftUI
+import FactoryKit
 import WeatherPlaypen
 
 @main
@@ -12,4 +13,10 @@ extension ExampleApp: App {
             MainView()
         }
     }
+}
+
+#Preview {
+    let _ = Container.shared.interactor.register { PreviewInteractor() }
+    let _ = Container.shared.locationInteractor.register { PreviewLocationInteractor() }
+    MainView()
 }

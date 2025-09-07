@@ -13,7 +13,7 @@ targets:
   App:
     type: application
     platform: iOS
-    sources: [App, Resources]
+    sources: [App, Resources, AppTests/MockData]
     info:
       path: Resources/Info.plist
       properties:
@@ -21,14 +21,14 @@ targets:
         CFBundleVersion: '1'
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         UILaunchStoryboardName: LaunchScreen.storyboard
-        CFBundleDisplayName: App
+        CFBundleDisplayName: WeatherPlaypen
         UIUserInterfaceStyle: Light
         UIStatusBarStyle: UIStatusBarStyleDarkContent
         UIApplicationSceneManifest: {
             UIApplicationSupportsMultipleScenes: false,
             UISceneConfigurations: {}
         }
-        NSLocationWhenInUseUsageDescription: $(CFBundleDisplayName) needs access to your location when in use to provide weather reports
+        NSLocationWhenInUseUsageDescription: WeatherPlaypen needs access to your location when in use to provide weather reports
     preBuildScripts:
       - path: ../Scripts/swiftlint.sh
         name: Swiftlint
@@ -60,8 +60,7 @@ targets:
       frameworkName: App
     type: bundle.unit-test
     platform: iOS
-    sources:
-      - path: AppTests
+    sources: [AppTests, AppTests/MockData]
     info:
       path: AppTests/Info.plist
     dependencies:

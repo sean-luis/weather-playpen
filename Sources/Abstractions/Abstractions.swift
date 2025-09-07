@@ -2,14 +2,14 @@ import CoreLocation
 
 // MARK: Domain
 
-public protocol Interactor: Sendable {
-    func fetchWeatherCurrent(latitude: String, longitude: String) async throws -> WPPCurrent
-    func fetchWeatherForecast(latitude: String, longitude: String) async throws -> WPPForecast
+public protocol WeatherInteractor: Sendable {
+    func fetchWeatherCurrent(latitude: String, longitude: String) async throws -> WeatherToday
+    func fetchWeatherForecast(latitude: String, longitude: String) async throws -> WeatherForecast
 }
 
 // MARK: Data
 
-public protocol Repository: Sendable {
+public protocol WeatherRepository: Sendable {
     func fetchWeatherCurrent(latitude: String, longitude: String) async throws -> WPPCurrentDTO
     func fetchWeatherForecast(latitude: String, longitude: String) async throws -> WPPForecastDTO
 }
