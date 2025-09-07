@@ -6,15 +6,15 @@ import CoreLocation
 
 @MainActor
 final class InteractorTests: XCTestCase {
-    var implementationUnderTest: InteractorImpl!
-    var mockRepository: MockRepository!
+    var implementationUnderTest: WeatherInteractorImpl!
+    var mockRepository: MockWeatherRepository!
     let mockLocation = CLLocation(latitude: -34.397329, longitude: 20.823780)
 
     override func setUp() {
         super.setUp()
-        mockRepository = MockRepository()
-        Container.shared.repository.register { @MainActor in self.mockRepository as Repository }
-        implementationUnderTest = InteractorImpl()
+        mockRepository = MockWeatherRepository()
+        Container.shared.repository.register { @MainActor in self.mockRepository as WeatherRepository }
+        implementationUnderTest = WeatherInteractorImpl()
     }
 
     override func tearDown() {
@@ -79,7 +79,7 @@ final class InteractorTests: XCTestCase {
             let response = try await implementationUnderTest.fetchWeatherForecast(latitude: latitude, longitude: longitude)
             XCTAssertEqual(response.forecast.count, 5)
             XCTAssertEqual(response.forecast[0].weatherType, .cloud)
-            XCTAssertEqual(response.forecast[0].temperature, "25.43")
+            XCTAssertEqual(response.forecast[0].temperature, "25°")
             XCTAssertEqual(response.forecast[0].dayOfWeek, "Sunday")
             XCTAssertEqual(response.forecast[1].dayOfWeek, "Monday")
             XCTAssertEqual(response.forecast[2].dayOfWeek, "Tuesday")
@@ -124,7 +124,7 @@ final class InteractorTests: XCTestCase {
             let response = try await implementationUnderTest.fetchWeatherForecast(latitude: latitude, longitude: longitude)
             XCTAssertEqual(response.forecast.count, 5)
             XCTAssertEqual(response.forecast[0].weatherType, .cloud)
-            XCTAssertEqual(response.forecast[0].temperature, "25.42")
+            XCTAssertEqual(response.forecast[0].temperature, "25°")
             XCTAssertEqual(response.forecast[0].dayOfWeek, "Saturday")
             XCTAssertEqual(response.forecast[1].dayOfWeek, "Sunday")
             XCTAssertEqual(response.forecast[2].dayOfWeek, "Monday")

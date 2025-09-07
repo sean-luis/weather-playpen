@@ -7,8 +7,10 @@ import OSLog
 @MainActor
 public final class MainViewModel: NSObject, ObservableObject {
     @Injected(\.locationInteractor) private var locationInteractor
-    @Injected(\.repository) private var repository
-    @Published var userLocation: CLLocation?
+    @Injected(\.interactor) private var interactor
+    @Published var weatherTodayResponse: WeatherToday = WeatherToday.emptyState
+    @Published var weatherForecastResponse: WeatherForecast = WeatherForecast.emptyState
+    private var userLocation: CLLocation?
     
     public override init() {
         super.init()
@@ -20,8 +22,8 @@ public final class MainViewModel: NSObject, ObservableObject {
         guard let userLocation else { return }
         
         do {
-            try await repository.fetchWeatherCurrent(latitude: userLocation.coordinate.latitude.description,
-                                                     longitude: userLocation.coordinate.longitude.description)
+            weatherTodayResponse = try await interactor.fetchWeatherCurrent(latitude: userLocation.coordinate.latitude.description,
+                                                                            longitude: userLocation.coordinate.longitude.description)
         } catch {
             OSLog.network.debug("Failed to fetch todays weather: \(String(describing: error))")
         }
@@ -31,8 +33,8 @@ public final class MainViewModel: NSObject, ObservableObject {
         guard let userLocation else { return }
         
         do {
-            try await repository.fetchWeatherForecast(latitude: userLocation.coordinate.latitude.description,
-                                                      longitude: userLocation.coordinate.longitude.description)
+            weatherForecastResponse = try await interactor.fetchWeatherForecast(latitude: userLocation.coordinate.latitude.description,
+                                                                                longitude: userLocation.coordinate.longitude.description)
         } catch {
             OSLog.network.debug("Failed to fetch forecast: \(String(describing: error))")
         }
@@ -57,6 +59,8 @@ extension MainViewModel: @preconcurrency LocationManagerDelegate {
         switch status {
         case .authorizedWhenInUse:
             userLocation = locationInteractor.currentLocation
+            Task { await fetchWeatherToday() }
+            Task { await fetchWeatherForecast() }
         default:
             userLocation = nil
         }

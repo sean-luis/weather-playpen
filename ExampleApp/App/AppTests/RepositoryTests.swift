@@ -6,7 +6,7 @@ import CoreLocation
 
 @MainActor
 final class RepositoryTests: XCTestCase {
-    var implementationUnderTest: RepositoryImpl!
+    var implementationUnderTest: WeatherRepositoryImpl!
     var mockNetworkingProvider: MockNetworkingProvider!
     let mockLocation = CLLocation(latitude: -34.397329, longitude: 20.823780)
 
@@ -14,7 +14,7 @@ final class RepositoryTests: XCTestCase {
         super.setUp()
         mockNetworkingProvider = MockNetworkingProvider()
         Container.shared.networkingProvider.register { @MainActor in self.mockNetworkingProvider as NetworkingProvider }
-        implementationUnderTest = RepositoryImpl()
+        implementationUnderTest = WeatherRepositoryImpl()
     }
 
     override func tearDown() {

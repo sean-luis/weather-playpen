@@ -1,7 +1,7 @@
 import FactoryKit
 
 @MainActor
-public final class RepositoryImpl: Sendable, Repository {
+public final class WeatherRepositoryImpl: Sendable, WeatherRepository {
     @Injected(\.networkingProvider) private var networkingProvider
     
     public init() {}

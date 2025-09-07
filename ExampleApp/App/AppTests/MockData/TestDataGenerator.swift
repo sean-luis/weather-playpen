@@ -7,16 +7,16 @@ final class TestDataGenerator {
 
     // MARK: Entities
 
-    static var mockedCurrentWeather: WPPCurrent {
-        WPPCurrent.transform(dto: mockedCurrentWeatherDTO)
+    static var mockedCurrentWeather: WeatherToday {
+        WeatherToday.transform(dto: mockedCurrentWeatherDTO)
     }
 
-    static var mockedPostMiddayForecastWeather: WPPForecast {
-        WPPForecast.transform(dto: mockedPostMiddayForecastWeatherDTO)
+    static var mockedPostMiddayForecastWeather: WeatherForecast {
+        WeatherForecast.transform(dto: mockedPostMiddayForecastWeatherDTO)
     }
 
-    static var mockedPriorMiddayForecastWeather: WPPForecast {
-        WPPForecast.transform(dto: mockedPriorMiddayForecastWeatherDTO)
+    static var mockedPriorMiddayForecastWeather: WeatherForecast {
+        WeatherForecast.transform(dto: mockedPriorMiddayForecastWeatherDTO)
     }
 
     // MARK: DTOs
