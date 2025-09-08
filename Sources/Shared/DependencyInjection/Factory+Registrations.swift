@@ -11,6 +11,10 @@ extension Container {
         self { @MainActor in WeatherRepositoryImpl() as WeatherRepository }
     }
     
+    public var userPreferences: Factory<UserPreferencesStore> {
+        self { UserPreferencesStoreImpl() as UserPreferencesStore }
+    }
+    
     public var networkingProvider: Factory<NetworkingProvider> {
         self { NetworkingProviderImpl() as NetworkingProvider }
     }
