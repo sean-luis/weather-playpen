@@ -14,6 +14,11 @@ public protocol WeatherRepository: Sendable {
     func fetchWeatherForecast(latitude: String, longitude: String) async throws -> WPPForecastDTO
 }
 
+public protocol UserPreferencesStore {
+    func set<Model: Codable>(object: Model, for key: String)
+    func retrieveObject<Model: Codable>(type: Model.Type, for key: String) -> Model?
+}
+
 public protocol NetworkingProvider: Sendable {
     func fetchJSONModel<Model: Codable & Sendable>(path: String, parameters: [String: String]) async throws -> Result<Model, Error>
 }
